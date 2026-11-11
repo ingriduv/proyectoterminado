@@ -1,0 +1,65 @@
+<section class="galeria">
+
+    <div class="encabezado-galeria">
+        <p class="subtitulo">EXPLORACIÓN OCEÁNICA</p>
+        <h1>Secretos del <span>océano</span></h1>
+        <p class="descripcion-galeria">
+            Descubrí las fascinantes criaturas que habitan las profundidades marinas.
+        </p>
+    </div>
+
+    <div class="contenedor-animales">
+        @for (criatura of criaturas; track criatura.nombre) {
+        <article class="tarjeta-animal">
+
+            <div class="imagen-animal">
+                <img [src]="criatura.imagen" [alt]="criatura.nombre">
+
+                <span class="etiqueta">ABYSS EXPLORER</span>
+            </div>
+
+            <div class="contenido-animal">
+                <h2>{{ criatura.nombre }}</h2>
+
+                <p>{{ criatura.descripcion }}</p>
+
+                <button type="button" class="boton-informacion" (click)="verInformacion(criatura)">
+                    Ver información
+                    <span>↗</span>
+                </button>
+            </div>
+
+        </article>
+        }
+    </div>
+</section>
+@if (criaturaSeleccionada) {
+<div class="fondo-modal" (click)="cerrarInformacion()">
+
+    <section class="ventana-informacion" role="dialog" aria-modal="true" aria-labelledby="titulo-criatura"
+        (click)="$event.stopPropagation()">
+
+        <button type="button" class="boton-cerrar" aria-label="Cerrar información" (click)="cerrarInformacion()">
+            ✕
+        </button>
+
+        <img class="imagen-modal" [src]="criaturaSeleccionada.imagen" [alt]="criaturaSeleccionada.nombre">
+
+        <p class="subtitulo">ARCHIVO OCEÁNICO</p>
+
+        <h2 id="titulo-criatura">
+            {{ criaturaSeleccionada.nombre }}
+        </h2>
+
+        <p class="texto-informacion">
+            {{ criaturaSeleccionada.informacion }}
+        </p>
+
+        <button type="button" class="boton-informacion" (click)="cerrarInformacion()">
+            Volver a la galería
+        </button>
+
+    </section>
+
+</div>
+}

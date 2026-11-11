@@ -1,0 +1,101 @@
+
+<nav class="abyss-topbar navbar navbar-expand-xl">
+  <div class="container-fluid px-3 px-xl-4">
+
+    <!-- LOGO -->
+    <a class="navbar-brand abyss-brand" href="#inicio">
+      <span class="abyss-logo">
+        <i class="bi bi-water"></i>
+      </span>
+
+      <span class="abyss-brand-text">
+        ABYSS
+        <small>OCEAN EXPLORATION</small>
+      </span>
+    </a>
+
+    <!-- BOTÓN MÓVIL -->
+    <button
+      class="navbar-toggler abyss-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#abyssNavigation"
+      aria-controls="abyssNavigation"
+      aria-expanded="false"
+      aria-label="Abrir navegación">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- CONTENIDO DE NAVEGACIÓN -->
+    <div class="collapse navbar-collapse" id="abyssNavigation">
+
+      <!-- ENLACES -->
+      <ul class="navbar-nav abyss-nav mx-xl-4">
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="inicio">Inicio</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="galeria">Galería</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="nosotros">nosotros</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="contacto">contacto</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="variedad">Variedad</a>
+        </li>
+
+      </ul>
+
+      <!-- BUSCADOR -->
+      <form class="abyss-search ms-xl-auto"
+            role="search"
+            (submit)="$event.preventDefault()">
+
+        <i class="bi bi-search"></i>
+
+        <input
+          type="search"
+          placeholder="Buscar especies, hábitats, curiosidades..."
+          aria-label="Buscar en ABYSS">
+
+        <button type="submit" aria-label="Buscar">
+          <i class="bi bi-arrow-right"></i>
+        </button>
+      </form>
+
+      <!-- ICONOS -->
+      <div class="abyss-actions">
+
+        <button class="abyss-icon-btn"
+                type="button"
+                aria-label="Cambiar apariencia"
+                title="Cambiar apariencia">
+          <i class="bi bi-sun"></i>
+        </button>
+
+        <button class="abyss-icon-btn"
+                type="button"
+                aria-label="Notificaciones"
+                title="Notificaciones">
+          <i class="bi bi-bell"></i>
+        </button>
+
+        <button class="abyss-profile"
+                type="button"
+                aria-label="Mi perfil"
+                title="Mi perfil">
+          <i class="bi bi-person"></i>
+        </button>
+
+      </div>
+
+    </div>
+  </div>
+</nav>

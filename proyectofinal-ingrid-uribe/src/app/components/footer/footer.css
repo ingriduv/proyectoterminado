@@ -1,0 +1,222 @@
+
+/* ===== ABYSS FUTURISTIC FOOTER ===== */
+
+.abyss-footer {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      ellipse at 15% 0%,
+      rgba(0, 136, 255, 0.13),
+      transparent 45%
+    ),
+    radial-gradient(
+      ellipse at 90% 100%,
+      rgba(0, 217, 255, 0.08),
+      transparent 40%
+    ),
+    #020817;
+  border-top: 1px solid rgba(0, 217, 255, 0.45);
+  box-shadow: 0 -8px 35px rgba(0, 140, 255, 0.06);
+}
+
+/* Logo */
+.abyss-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #eefaff;
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: 5px;
+  transition: 0.3s ease;
+}
+
+.abyss-logo:hover {
+  text-shadow: 0 0 18px #00d9ff;
+}
+
+.logo-icon {
+  color: #00d9ff;
+  font-size: 30px;
+  text-shadow: 0 0 15px #00bfff;
+}
+
+.logo-dot {
+  color: #00d9ff;
+}
+
+/* Descripción */
+.footer-description {
+  max-width: 340px;
+  color: #91abc4;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+/* Títulos */
+.footer-title {
+  margin-bottom: 22px;
+  color: #e9f8ff;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.footer-title::after {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 2px;
+  margin-top: 10px;
+  border-radius: 10px;
+  background: #00d9ff;
+  box-shadow: 0 0 10px #00d9ff;
+}
+
+/* Enlaces */
+.footer-links {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 13px;
+}
+
+.footer-links a {
+  color: #8da7c0;
+  font-size: 13px;
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+
+.footer-links a:hover {
+  padding-left: 6px;
+  color: #00d9ff;
+  text-shadow: 0 0 12px rgba(0, 217, 255, 0.45);
+}
+
+/* Estado */
+.footer-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 12px;
+  padding: 9px 12px;
+  border: 1px solid rgba(0, 217, 255, 0.2);
+  border-radius: 6px;
+  background: rgba(0, 217, 255, 0.04);
+  color: #79cce5;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #00e5ff;
+  box-shadow: 0 0 10px #00e5ff;
+  animation: abyss-pulse 1.8s infinite;
+}
+
+@keyframes abyss-pulse {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 10px #00e5ff;
+  }
+
+  50% {
+    opacity: 0.4;
+    box-shadow: 0 0 3px #00e5ff;
+  }
+}
+
+/* Redes sociales */
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid #164568;
+  border-radius: 10px;
+  background: rgba(0, 130, 255, 0.07);
+  color: #a9eaff;
+  font-size: 12px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.social-links a:hover {
+  transform: translateY(-4px);
+  border-color: #00d9ff;
+  background: rgba(0, 217, 255, 0.13);
+  color: #ffffff;
+  box-shadow: 0 0 18px rgba(0, 217, 255, 0.25);
+}
+
+.footer-small {
+  color: #688aa7;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+/* Separador */
+.footer-divider {
+  height: 1px;
+  margin: 38px 0 22px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #087da8,
+    #00d9ff,
+    #087da8,
+    transparent
+  );
+  opacity: 0.6;
+}
+
+/* Parte inferior */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  color: #63829d;
+  font-size: 11px;
+}
+
+.footer-credit span {
+  color: #00d9ff;
+  text-shadow: 0 0 8px #00d9ff;
+}
+
+/* Adaptación a celulares */
+@media (max-width: 576px) {
+  .abyss-footer .container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .abyss-logo {
+    font-size: 22px;
+  }
+}

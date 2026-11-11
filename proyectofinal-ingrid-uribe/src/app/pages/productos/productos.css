@@ -1,0 +1,278 @@
+
+/* ===== GALERÍA ABYSS ===== */
+
+.galeria {
+  min-height: 100vh;
+  padding: 70px 7%;
+  background:
+    radial-gradient(ellipse at 50% 0%, #063b68 0%, transparent 45%),
+    linear-gradient(180deg, #020b18 0%, #041629 55%, #020914 100%);
+  color: #eaf8ff;
+  overflow: hidden;
+}
+
+/* ===== ENCABEZADO ===== */
+
+.encabezado-galeria {
+  max-width: 850px;
+  margin: 0 auto 55px;
+  text-align: center;
+}
+
+.subtitulo {
+  color: #25dfff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.encabezado-galeria h1 {
+  color: #ffffff;
+  font-size: clamp(2.3rem, 5vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: -2px;
+  margin-bottom: 20px;
+  text-shadow: 0 0 25px #008cff55;
+}
+
+.encabezado-galeria h1 span {
+  color: #27dfff;
+  text-shadow: 0 0 18px #00bfff88;
+}
+
+.descripcion-galeria {
+  max-width: 600px;
+  margin: auto;
+  color: #a7c5dc;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* ===== CONTENEDOR DE TARJETAS ===== */
+
+.contenedor-animales {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1400px;
+  margin: auto;
+}
+
+/* ===== TARJETA DEL ANIMAL ===== */
+
+.tarjeta-animal {
+  position: relative;
+  background: linear-gradient(145deg, #0a2035, #04111f);
+  border: 1px solid #1477a966;
+  border-radius: 18px;
+  overflow: hidden;
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.tarjeta-animal:hover {
+  transform: translateY(-8px);
+  border-color: #24dfff;
+  box-shadow:
+    0 0 12px #00cfff44,
+    0 0 35px #008cff22,
+    inset 0 0 18px #00cfff0d;
+}
+
+/* ===== IMÁGENES ===== */
+
+.imagen-animal {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  background: #061a2d;
+}
+
+.imagen-animal::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 55%,
+    #04111fe8 100%
+  );
+  pointer-events: none;
+}
+
+.imagen-animal img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.tarjeta-animal:hover .imagen-animal img {
+  transform: scale(1.08);
+}
+
+/* ===== ETIQUETA ===== */
+
+.etiqueta {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 1;
+  padding: 7px 11px;
+  border: 1px solid #35dfff77;
+  border-radius: 5px;
+  background: #041727cc;
+  color: #65eaff;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  backdrop-filter: blur(8px);
+}
+
+/* ===== TEXTO DE LA TARJETA ===== */
+
+.contenido-animal {
+  padding: 23px;
+}
+
+.contenido-animal h2 {
+  color: #f0fbff;
+  font-size: 23px;
+  font-weight: 700;
+  margin: 0 0 12px;
+}
+
+.contenido-animal p {
+  color: #a5bfd2;
+  font-size: 14px;
+  line-height: 1.8;
+  min-height: 50px;
+  margin-bottom: 22px;
+}
+
+/* ===== BOTÓN VER INFORMACIÓN ===== */
+
+.boton-informacion {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px 17px;
+  border: 1px solid #16cfff;
+  border-radius: 7px;
+  background: #087bb522;
+  color: #67eaff;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.boton-informacion:hover {
+  background: #09bce8;
+  color: #02111e;
+  box-shadow: 0 0 20px #00cfff77;
+}
+
+.boton-informacion span {
+  font-size: 17px;
+}
+
+/* ===== FONDO DE LA VENTANA ===== */
+
+.fondo-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: #010710dd;
+  backdrop-filter: blur(8px);
+  overflow-y: auto;
+}
+
+/* ===== VENTANA DE INFORMACIÓN ===== */
+
+.ventana-informacion {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 28px;
+  border: 1px solid #20dfff88;
+  border-radius: 18px;
+  background:
+    radial-gradient(ellipse at top, #0a3452, transparent 65%),
+    #041321;
+  box-shadow:
+    0 0 30px #00bfff33,
+    0 0 80px #0077ff22;
+  animation: aparecer 0.25s ease;
+}
+
+.imagen-modal {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  border: 1px solid #168eb455;
+}
+
+.ventana-informacion h2 {
+  color: #ffffff;
+  font-size: 30px;
+  margin: 0 0 15px;
+}
+
+.texto-informacion {
+  color: #bdd3e4;
+  font-size: 15px;
+  line-height: 1.9;
+  margin-bottom: 25px;
+}
+
+.boton-cerrar {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #6adfff77;
+  border-radius: 50%;
+  background: #031321dd;
+  color: #ffffff;
+  font-size: 17px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.boton-cerrar:hover {
+  background: #0abde8;
+  color: #02111e;
+  transform: rotate(90deg);
+}
+
+/* ===== ANIMACIÓN ===== */
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

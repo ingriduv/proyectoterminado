@@ -1,0 +1,210 @@
+
+/* ===== PORTADA ABYSS ===== */
+
+.abyss-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: calc(100vh - 62px);
+  overflow: hidden;
+
+  background-color: #020817;
+  background-image: url('/img/imgbuzeador.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  border-bottom: 1px solid #087da8;
+}
+
+/* Oscurece el lado izquierdo de la imagen */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    90deg,
+    rgba(2, 8, 23, 0.92) 0%,
+    rgba(2, 8, 23, 0.70) 36%,
+    rgba(2, 8, 23, 0.10) 75%,
+    rgba(2, 8, 23, 0.15) 100%
+  );
+}
+
+/* Contenido principal */
+.hero-container {
+  position: relative;
+  z-index: 1;
+
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.hero-content {
+  max-width: 510px;
+}
+
+/* Etiqueta superior */
+.hero-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  margin-bottom: 22px;
+  padding: 8px 13px;
+
+  color: #00d9ff;
+  background: rgba(0, 170, 255, 0.08);
+  border: 1px solid rgba(0, 217, 255, 0.5);
+  border-radius: 30px;
+
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.hero-label i {
+  font-size: 17px;
+}
+
+/* Título */
+.hero-content h1 {
+  margin-bottom: 22px;
+
+  color: #f3f9ff;
+  font-size: clamp(42px, 5vw, 68px);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -1.5px;
+}
+
+.hero-content h1 span {
+  color: #00d9ff;
+  text-shadow: 0 0 25px rgba(0, 217, 255, 0.4);
+}
+
+/* Descripción */
+.hero-content p {
+  max-width: 410px;
+  margin-bottom: 30px;
+
+  color: #d1e3f5;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* Botón */
+.btn-abyss {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+
+  padding: 14px 22px;
+
+  color: #021226;
+  background: linear-gradient(110deg, #00bfff, #00e5ff);
+  border: 1px solid #00d9ff;
+  border-radius: 30px;
+
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+
+  box-shadow: 0 0 22px rgba(0, 217, 255, 0.25);
+  transition: 0.3s ease;
+}
+
+.btn-abyss:hover {
+  color: #021226;
+  transform: translateY(-3px);
+  box-shadow: 0 0 30px rgba(0, 217, 255, 0.5);
+}
+
+.btn-abyss i {
+  font-size: 18px;
+}
+
+/* Flecha inferior */
+.scroll-indicator {
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+
+  color: #00d9ff;
+  border: 1px solid #00d9ff;
+  border-radius: 50%;
+  text-decoration: none;
+
+  animation: abyss-float 2s infinite ease-in-out;
+}
+
+@keyframes abyss-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+/* Sección que aparece debajo */
+.abyss-intro {
+  padding: 55px 20px;
+  background: #020817;
+  text-align: center;
+}
+
+.abyss-intro > span {
+  color: #00d9ff;
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+
+.abyss-intro h2 {
+  margin: 14px 0;
+  color: #f3f9ff;
+  font-size: clamp(25px, 3vw, 36px);
+  font-weight: 700;
+}
+
+.abyss-intro p {
+  max-width: 550px;
+  margin: 0 auto;
+  color: #9db9d2;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* Adaptación a celulares */
+@media (max-width: 576px) {
+  .abyss-hero {
+    min-height: 620px;
+    background-position: 65% center;
+  }
+
+  .hero-overlay {
+    background: rgba(2, 8, 23, 0.60);
+  }
+
+  .hero-container {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .hero-content h1 {
+    font-size: 43px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+  }
+}
